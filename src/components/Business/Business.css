@@ -17,10 +17,10 @@
   font-weight: 600;
 }
 
-.Business-information {
+/* .Business-information {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .Business-information p {
   font-size: .88rem;
@@ -28,18 +28,18 @@
   line-height: 1rem;
 }
 
-.Business-address {
+/* .Business-address {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
+} */
 
-.Business-reviews {
+/* .Business-reviews {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: right;
-}
+} */
 
 .Business-reviews h3 {
   color: #CCA353;
