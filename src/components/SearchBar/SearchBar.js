@@ -1,11 +1,10 @@
 import React from 'react';
 import './SearchBar.css';
-import Loading from '../Loading/Loading';
+import loading from '../Loading/Loading';
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       term: '',
       location: '',
@@ -29,23 +28,24 @@ class SearchBar extends React.Component {
     if (this.state.sortBy === sortByOption) {
       return 'active';
     }
-    return '';
+      return '';
   }
 
   handleSortByChange(sortByOption) {
-    this.setState({sortBy: sortByOption});
+    this.setState({ sortBy: sortByOption});
   }
 
   handleTermChange(event) {
-    this.setState({term: event.target.value});
+    this.setState({ term: event.target.value });
   }
 
   handleLocationChange(event) {
-    this.setState({location: event.target.value});
+    this.setState({ location: event.target.value});
   }
 
   handleSearch(event) {
     this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
+    this.props.loading();
   }
 
   handleKeyPress = (event) => {
@@ -58,17 +58,17 @@ class SearchBar extends React.Component {
     return Object.keys(this.sortByOptions).map(sortByOption => {
       let sortByOptionValue = this.sortByOptions[sortByOption];
       return (<li className={this.getSortByClass(sortByOptionValue)}
-                  key={sortByOptionValue}
-                  onClick={this.handleSortByChange.bind(this, sortByOptionValue)}>
-                {sortByOption}
-             </li>);
+        key={sortByOptionValue}
+        onClick={this.handleSortByChange.bind(this, sortByOptionValue)}>
+        {sortByOption}
+      </li>);
     });
   }
-
 
   render() {
     return (
       <div className="SearchBar">
+          <h1>ravenous</h1>
         <div className="SearchBar-sort-options">
           <ul>
             {this.renderSortByOptions()}
@@ -79,7 +79,7 @@ class SearchBar extends React.Component {
           <input placeholder="Location" onChange={this.handleLocationChange} onKeyPress={this.handleKeyPress} />
         </div>
         <div className="SearchBar-submit">
-          <button onClick={this.handleSearch}>Let's Go</button>
+          <button className="button" onClick={this.handleSearch}> Let's Go</button>
         </div>
       </div>
     );

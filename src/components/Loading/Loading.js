@@ -1,8 +1,16 @@
-import React from 'react';
-import ReactLoading from 'react-loading';
+import React, { Component } from 'react';
+import './Loading.css';
+import loadingImg from './loading.gif';
 
-const Loading = ({ type, color }) => (
-    <ReactLoading type={type} color={color} height={667} width={375} />
-);
+class Loading extends Component {
+    render(){
+        return (
+            <div className='loadingContainer'>
+                <img src={loadingImg} className='loadingImg' alt='Loading' />
+            </div>
+        );
+    }
+}
 
 export default Loading;
+
