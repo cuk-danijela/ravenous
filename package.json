@@ -23,7 +23,7 @@
     "ws": "^8.4.0"
   },
   "devDependencies": {
-    "react-scripts": "^3.4.4"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
